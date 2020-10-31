@@ -1,0 +1,15 @@
+// Model file generated with Highway-CLI.
+import mongoose, {Schema} from 'mongoose';
+import I<%=modelName%>Model from "core/interfaces/models/I<%=modelName%>Model";
+
+const <%=modelName%>Schema:Schema = new mongoose.Schema({
+
+    },
+    {
+        timestamps: {
+        createdAt: 'created_at',
+        updatedAt: 'updated_at'
+    }
+});
+
+export default mongoose.model<I<%=modelName%>Model>('<%=modelName%>', <%=modelName%>Schema);

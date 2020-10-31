@@ -1,0 +1,26 @@
+// Controller file generated with Highway-CLI
+
+import express from "express";
+import {ResponseHelper} from "_helpers_";
+import {Controller} from "helpers/Decorators";
+import ILooseObject from "core/interfaces/ILooseObject";
+
+@Controller()
+class <%=modelName%> {
+    private static _instance: <%=modelName%>;
+
+    private constructor() {
+    }
+
+    method = async (req:express.Request, res:express.Response) => {
+        return ResponseHelper.jsonResponse(res, {})
+    };
+
+    public static get Instance()
+    {
+        return this._instance || (this._instance = new this());
+    }
+
+}
+
+export default <%=modelName%>.Instance;

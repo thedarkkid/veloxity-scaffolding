@@ -1,0 +1,18 @@
+// Command File generated with Highway-CLI.
+
+import ICommand from "core/interfaces/highway/ICommand";
+import Echo from "helpers/Echo";
+import Config from "helpers/Config";
+import ILooseObject from "core/interfaces/highway/ILooseObject";
+import {dash} from "../Handler";
+
+export default class <%=className%> implements ICommand {
+
+    public commandString: string = "<%=commandString%>";
+    templatePath: string = Config.getTemplatesDir("<%=templatePathString%>"); // run "node highway make:template <%=templatePathString%>" to generateCode template file.
+    public flags: ILooseObject = {}; // all flags to be used in your doCommand will dynamically be added to this property. Include your default flag values in the flag object for intellisense purposes.
+    public doCommand = (filename: string):void => {
+        Echo.plain("<%=echoString%>");
+    };
+
+}

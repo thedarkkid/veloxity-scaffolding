@@ -1,0 +1,26 @@
+// Resource file generated with Highway-CLI.
+import HTTPResource from "core/http/resources/HTTPResource";
+import {I<%=name%>Model} from "core/interfaces/models/I<%=name%>Model";
+import ILooseObject from "core/interfaces/ILooseObject";
+import {objectFilterOut} from "helpers/Utility";
+import {Document} from "mongoose";
+
+export default class <%=name%>Resource extends HTTPResource<Document>{
+    constructor() {
+        super();
+    }
+
+    transformObject = (<%=lowerlize(name)%>: I<%=name%>Model): ILooseObject => {
+        return {
+            ...<%=lowerlize(name)%>.toObject()
+        };
+    };
+
+    protected with = {
+        author: "thedarkkid.codes@gmail.com",
+        license: "MIT",
+        version: "1.5"
+    };
+}
+
+export const <%=lowerlize(name)%>Resource = new <%=name%>Resource();

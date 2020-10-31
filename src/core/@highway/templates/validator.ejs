@@ -1,0 +1,18 @@
+// Validator file generated with Highway-CLI.
+import IValidator from "core/interfaces/validators/IValidator";
+import {ModelHelper} from "_helpers_";
+import Joi from "@hapi/joi";
+
+export default class <%=className%> implements IValidator{
+    protected static props = {
+        <%=lclass%>Name:{
+            messages: ModelHelper.generateErrorMessagesObject("name", 3,3, "string") // error messages generator.
+        }
+    };
+
+    static validator = Joi.object({
+        <%=lclass%>Name: Joi.string().min(3).max(3).required().messages(<%=className%>.props.<%=lclass%>Name.messages) // Joi validator object.
+
+    });
+}
+

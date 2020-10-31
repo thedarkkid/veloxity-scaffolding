@@ -1,0 +1,12 @@
+// Loader Load file generated with Highway-CLI.
+<% for( const mObj of moduleFiles ){%>
+    // register <%=mObj%> <%=suffix%>
+    import <%=capitalize(mObj)%>_ from "<%=importPath%><%=mObj%><%=(ipSuffix)?capitalize(suffix):""%>";
+    export const <%=capitalize(mObj)%><%=capitalize(suffix)%> =  <%=capitalize(mObj)%>_;
+<% }%>
+
+
+export default {<% for( const mObj of moduleFiles ){%> <% var modToLoad = capitalize(mObj)+capitalize(suffix);%>
+    <%=mObj%><%= (ipSuffix !== "" && modToLoad!=mObj)?":"+modToLoad:"" %>,<% }%>
+};
+

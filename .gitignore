@@ -1,0 +1,9 @@
+/.idea
+/node_modules
+/.git
+.git
+/dist
+dist
+/dist/
+.env
+/highway.js

@@ -1,0 +1,27 @@
+// Rest Controller file generated with Highway-CLI.
+import <%=modelName%> from "models/<%=modelName%>";
+import RESTAPIController from "core/classes/RESTAPIController";
+import {StoreValidator, UpdateValidator} from "_http_/validators/<%=modelName%>";
+import express from "express";
+import {Controller} from "helpers/Decorators";
+
+@Controller()
+class <%=modelName%>Controller extends RESTAPIController{
+    private static _instance: <%=modelName%>Controller;
+
+    private constructor() {
+        super(<%=modelName%>, StoreValidator, UpdateValidator);
+    }
+
+    store = async (req:express.Request, res:express.Response) => {
+        return this.storeWithPassword(req, res);
+    };
+
+    public static get Instance()
+    {
+        return this._instance || (this._instance = new this());
+    }
+
+}
+
+export default <%=modelName%>Controller.Instance;

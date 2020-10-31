@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "paths": {
+      "*": ["node_modules/*"],
+      "@/*": ["src/*"],
+      "models/*": ["src/models/*"],
+      "lib/*": ["src/lib/*"],
+      "core/*": ["src/core/*"],
+      "sandbox/*": ["src/tests/sandbox/*"],
+      "helpers/*": ["src/core/helpers/*"],
+      "routes/*": ["src/routes/*"],
+      "views/*": ["src/views/*"],
+      "http/*": ["src/http/*"],
+      "_http_/*": ["src/core/@loaders/http/*"],
+      "_models_": ["src/core/@loaders/models/index"],
+      "_helpers_": ["src/core/@loaders/helpers/index"],
+      "_routes_/*": ["src/core/@loaders/routes/*"]
+    },
+    "inlineSourceMap": true
+  }
+}
