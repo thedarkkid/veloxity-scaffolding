@@ -16,7 +16,8 @@
     "build": "tsc",
     "start": "node app",
     "dev": "nodemon",
-    "webpack": "npm run build && webpack --mode development"
+    "webpack": "npm run build && webpack --mode development",
+    "hot": "concurrently \"npm run dev\" \"npm run webpack\""
   },
   "keywords": [],
   "author": "",
